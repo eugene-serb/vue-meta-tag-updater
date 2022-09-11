@@ -1,6 +1,6 @@
 {
   "name": "vue-meta-tag-updater",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue Meta Tag Updater for update meta tags in Vue Router",
   "keywords": [
     "vue-router",
@@ -24,6 +24,8 @@
   },
   "main": "./dist/index.js",
   "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc",
     "test": "exit 0"
   },
   "dependencies": {
