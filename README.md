@@ -5,14 +5,16 @@ Vue Meta Tag Updater for update meta tags in Vue Router
 
 `npm install vue-meta-tag-updater`
 
-## Usage with TypeScript
+## About
 
-Objective.
+Context.
 You are building a single page application (SSR) with vue.js and you
 need to make different meta tags on the pages
 
-Step 0.
+Objective.
 We will add meta tags for the about page in our example.com project.
+
+## Usage with TypeScript
 
 Step 1.
 Add your «about» route to the routes array.
@@ -37,7 +39,7 @@ Next step will be add meta to the metas array.
 ```ts
   import IQueryRoute from 'vue-meta-tag-updater/src/types/IRouteMeta';
 
-  const queries: Array<IRouteMeta> = [
+  const metas: Array<IRouteMeta> = [
     {
       path: '/about',
       meta: {
@@ -62,7 +64,7 @@ Next step will be add meta to the metas array.
     },
   ];
 
-  export default queries;
+  export default metas;
 ```
 
 Step 3.
