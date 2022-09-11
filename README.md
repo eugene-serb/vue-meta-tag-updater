@@ -103,7 +103,7 @@ You may need to add an entry to the declaration file, for example 'modules.d.ts'
   declare module 'vue-meta-tag-updater';
 ```
 
-## Types.
+## Types
 There are three types. IRouteMeta for all metas array.
 
 ```ts
