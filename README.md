@@ -17,7 +17,7 @@ We will add meta tags for the about page in our example.com project.
 ## Usage with TypeScript
 
 Step 1.
-Add your «about» route to the routes array.
+Add your Â«aboutÂ» route to the routes array.
 
 ```ts
   import { RouteRecordRaw } from 'vue-router';
@@ -37,13 +37,13 @@ Step 2.
 Next step will be add meta to the metas array.
 
 ```ts
-  import IQueryRoute from 'vue-meta-tag-updater/src/types/IRouteMeta';
+  import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
 
   const metas: Array<IRouteMeta> = [
     {
       path: '/about',
       meta: {
-        title: 'Wavelovers – About',
+        title: 'Wavelovers â€“ About',
         metaTags: [
           {
             name: 'keywords',
@@ -101,4 +101,23 @@ You may need to add an entry to the declaration file, for example 'modules.d.ts'
 
 ```ts
   declare module 'vue-meta-tag-updater';
+```
+
+## Types.
+There are three types. IRouteMeta for all metas array.
+
+```ts
+  import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
+```
+
+IMeta for meta in metas array.
+
+```ts
+  import IMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
+```
+
+ITag for metaTags and linkTags in meta.
+
+```ts
+  import ITag from 'vue-meta-tag-updater/src/types/IRouteMeta';
 ```
