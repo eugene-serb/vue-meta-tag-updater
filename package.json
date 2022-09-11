@@ -1,0 +1,37 @@
+{
+  "name": "vue-meta-tag-updater",
+  "version": "1.0.2",
+  "description": "Vue Meta Tag Updater for update meta tags in Vue Router",
+  "keywords": [
+    "vue-router",
+    "vue.js",
+    "vue-meta-tag-router",
+    "meta-tag-updater"
+  ],
+  "license": "GNU GPL v3",
+  "author": {
+    "name": "Eugene Serb",
+    "email": "eugene.serb@gmail.com",
+    "url": "https://eugene-serb.github.io/"
+  },
+  "homepage": "https://github.com/eugene-serb/vue-meta-tag-updater#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugene-serb/vue-meta-tag-updater.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eugene-serb/vue-meta-tag-updater/issues"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}
