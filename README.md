@@ -8,8 +8,8 @@ Vue Meta Tag Updater for update meta tags in Vue Router
 ## About
 
 Context.
-You are building a single page application (SSR) with vue.js and you
-need to make different meta tags on the pages
+You are building a single page application (SPA) with vue.js and you
+need to make different meta tags on the pages.
 
 Objective.
 We will add meta tags for the about page in our example.com project.
