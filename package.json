@@ -1,6 +1,6 @@
 {
   "name": "vue-meta-tag-updater",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue Meta Tag Updater for update meta tags in Vue Router",
   "keywords": [
     "vue-router",
