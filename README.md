@@ -113,11 +113,11 @@ There are three types. IRouteMeta for all metas array.
 IMeta for meta in metas array.
 
 ```ts
-  import IMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
+  import IMeta from 'vue-meta-tag-updater/src/types/IMeta';
 ```
 
 ITag for metaTags and linkTags in meta.
 
 ```ts
-  import ITag from 'vue-meta-tag-updater/src/types/IRouteMeta';
+  import ITag from 'vue-meta-tag-updater/src/types/ITag';
 ```
