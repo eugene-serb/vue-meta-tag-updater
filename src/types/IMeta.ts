@@ -1,9 +1,7 @@
-import type ITag from './ITag';
+import type { ITag } from './ITag';
 
-interface IMeta {
+export interface IMeta {
   title: string;
   metaTags: Array<ITag>;
   linkTags: Array<ITag>;
 }
-
-export default IMeta;

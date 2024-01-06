@@ -1,8 +1,6 @@
-import type IMeta from './IMeta';
+import type { IMeta } from './IMeta';
 
-interface IRouteMeta {
+export interface IRouteMeta {
   path: string;
   meta: IMeta;
 }
-
-export default IRouteMeta;
