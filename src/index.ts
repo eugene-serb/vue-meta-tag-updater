@@ -1,8 +1,17 @@
 import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 import type { ITag, IRouteMeta, MetaTagType } from '@/types';
 
+/**
+ * Аттрибут присваиваемый тегам, которые были добавлены динамически.
+ */
 const CONTROL_ATTRIBUTE = 'data-vue-router-controlled';
 
+/**
+ * Вставить теги.
+ * 
+ * @param tagsArray Теги.
+ * @param type Тип тегов.
+ */
 function appendTags(tagsArray: Array<ITag>, type: MetaTagType) {
   tagsArray
     .map((meta) => {
@@ -18,6 +27,15 @@ function appendTags(tagsArray: Array<ITag>, type: MetaTagType) {
     .forEach((tag) => document.head.appendChild(tag));
 }
 
+/**
+ * Обновить мета информацию страницы.
+ * 
+ * @param to Куда переходим.
+ * @param from Откуда переходим.
+ * @param next Следующий middleware.
+ * @param metas Мета информация страницы.
+ * @returns 
+ */
 function updateMetaTag(
   to: RouteLocationNormalized,
   from: RouteLocationNormalized,
@@ -59,6 +77,9 @@ function updateMetaTag(
   return next();
 }
 
+/**
+ * Публичный объект.
+ */
 const MetaTagUpdater = {
   update: updateMetaTag,
 };
