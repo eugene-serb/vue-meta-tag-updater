@@ -1,5 +1,3 @@
-interface ITag {
+export interface ITag {
   [key: string]: string;
 }
-
-export default ITag;
