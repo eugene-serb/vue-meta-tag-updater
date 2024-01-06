@@ -3,6 +3,3 @@ node_modules
 
 # IDE / Editor
 .vs
-
-# Build Folder
-build
