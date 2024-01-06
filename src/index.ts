@@ -1,6 +1,6 @@
-import { NavigationGuardNext, RouteLocationNormalized } from "vue-router";
-import IRouteMeta from "@/types/IRouteMeta";
-import ITag from '@/types/ITag';
+import type { NavigationGuardNext, RouteLocationNormalized } from "vue-router";
+import type IRouteMeta from "@/types/IRouteMeta";
+import type ITag from '@/types/ITag';
 
 function appendTags(tagsArray: Array<ITag>, type: string) {
   tagsArray.map(
@@ -55,4 +55,4 @@ const MetaTagUpdater = {
   update: updateMetatag,
 };
 
-export default MetaTagUpdater;
+module.exports = MetaTagUpdater;

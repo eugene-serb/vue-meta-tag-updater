@@ -1,0 +1,42 @@
+'use strict';
+
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+module.exports = (env, argv) => {
+  return {
+    mode: argv.mode || 'development',
+    context: path.resolve(__dirname, 'src'),
+    entry: './index.ts',
+    output: {
+      filename: 'index.js',
+      path: path.resolve(__dirname, 'build'),
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+      minimize: true,
+      innerGraph: true,
+      usedExports: true,
+    },
+    resolve: {
+      extensions: ['.js', '.mjs', '.jsx', '.json', '.ts', '.tsx'],
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+      ],
+    },
+  };
+};
