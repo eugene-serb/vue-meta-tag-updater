@@ -1,4 +1,5 @@
 # vue-meta-tag-updater
+
 Vue Meta Tag Updater for update meta tags in Vue Router
 
 ## Installing
@@ -20,104 +21,105 @@ Step 1.
 Add your «about» route to the routes array.
 
 ```ts
-  import { RouteRecordRaw } from 'vue-router';
+import { RouteRecordRaw } from 'vue-router';
 
-  const routes: Array<RouteRecordRaw> = [
-    {
-      path: '/about',
-      name: 'about-view',
-      component: () => import('@/views/AboutView.vue'),
-    },
-  ];
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/about',
+    name: 'about-view',
+    component: () => import('@/views/AboutView.vue'),
+  },
+];
 
-  export default routes;
+export default routes;
 ```
 
 Step 2.
 Next step will be add meta to the metas array.
 
 ```ts
-  import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
+import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
 
-  const metas: Array<IRouteMeta> = [
-    {
-      path: '/about',
-      meta: {
-        title: 'Wavelovers – About',
-        metaTags: [
-          {
-            name: 'keywords',
-            content: 'example.com, about page, other keywords',
-          },
-          {
-            name: 'description',
-            content: 'example.com has what you need',
-          },
-        ],
-        linkTags: [
-          {
-            rel: 'canonical',
-            href: 'https://example.com/about',
-          },
-        ],
-      },
+const metas: Array<IRouteMeta> = [
+  {
+    path: '/about',
+    meta: {
+      title: 'Wavelovers – About',
+      metaTags: [
+        {
+          name: 'keywords',
+          content: 'example.com, about page, other keywords',
+        },
+        {
+          name: 'description',
+          content: 'example.com has what you need',
+        },
+      ],
+      linkTags: [
+        {
+          rel: 'canonical',
+          href: 'https://example.com/about',
+        },
+      ],
     },
-  ];
+  },
+];
 
-  export default metas;
+export default metas;
 ```
 
 Step 3.
-Open router index file, and add call MetaTagUpdater.update 
+Open router index file, and add call MetaTagUpdater.update
 after router init and before export router .
 
 ```ts
-  import {
-    createRouter, createWebHistory,
-    NavigationGuardNext, RouteLocationNormalized
-  } from 'vue-router';
-  import MetaTagUpdater from 'vue-meta-tag-updater';
-  import routes from '@/router/assets/routes';
-  import metas from '@/router/assets/metas';
+import {
+  createRouter,
+  createWebHistory,
+  NavigationGuardNext,
+  RouteLocationNormalized,
+} from 'vue-router';
+import MetaTagUpdater from 'vue-meta-tag-updater';
+import routes from '@/router/assets/routes';
+import metas from '@/router/assets/metas';
 
-  const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-    routes,
-  });
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+});
 
-  router.beforeEach((
-    to: RouteLocationNormalized,
-    from: RouteLocationNormalized,
-    next: NavigationGuardNext,
-  ) => {
+router.beforeEach(
+  (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
     MetaTagUpdater.update(to, from, next, metas);
-  });
+  },
+);
 
-  export default router;
+export default router;
 ```
 
 Step 4.
 You may need to add an entry to the declaration file, for example 'modules.d.ts'.
 
 ```ts
-  declare module 'vue-meta-tag-updater';
+declare module 'vue-meta-tag-updater';
 ```
 
 ## Types
+
 There are three types. IRouteMeta for all metas array.
 
 ```ts
-  import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
+import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
 ```
 
 IMeta for meta in metas array.
 
 ```ts
-  import IMeta from 'vue-meta-tag-updater/src/types/IMeta';
+import IMeta from 'vue-meta-tag-updater/src/types/IMeta';
 ```
 
 ITag for metaTags and linkTags in meta.
 
 ```ts
-  import ITag from 'vue-meta-tag-updater/src/types/ITag';
+import ITag from 'vue-meta-tag-updater/src/types/ITag';
 ```
