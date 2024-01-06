@@ -8,20 +8,18 @@ Vue Meta Tag Updater for update meta tags in Vue Router
 
 ## About
 
-Context.
-You are building a single page application (SPA) with vue.js and you
+Context. You are building a single page application (SPA) with vue.js and you
 need to make different meta tags on the pages.
 
-Objective.
-We will add meta tags for the about page in our example.com project.
+Objective. We will add meta tags for the about page in our example.com project.
 
-## Usage with TypeScript
+## Usage
 
 Step 1.
 Add your «about» route to the routes array.
 
 ```ts
-import { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -38,13 +36,11 @@ Step 2.
 Next step will be add meta to the metas array.
 
 ```ts
-import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
-
-const metas: Array<IRouteMeta> = [
+const metas = [
   {
     path: '/about',
     meta: {
-      title: 'Wavelovers – About',
+      title: 'About Page',
       metaTags: [
         {
           name: 'keywords',
@@ -73,15 +69,12 @@ Open router index file, and add call MetaTagUpdater.update
 after router init and before export router .
 
 ```ts
-import {
-  createRouter,
-  createWebHistory,
-  NavigationGuardNext,
-  RouteLocationNormalized,
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import MetaTagUpdater from 'vue-meta-tag-updater';
 import routes from '@/router/assets/routes';
 import metas from '@/router/assets/metas';
+
+import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -95,31 +88,4 @@ router.beforeEach(
 );
 
 export default router;
-```
-
-Step 4.
-You may need to add an entry to the declaration file, for example 'modules.d.ts'.
-
-```ts
-declare module 'vue-meta-tag-updater';
-```
-
-## Types
-
-There are three types. IRouteMeta for all metas array.
-
-```ts
-import IRouteMeta from 'vue-meta-tag-updater/src/types/IRouteMeta';
-```
-
-IMeta for meta in metas array.
-
-```ts
-import IMeta from 'vue-meta-tag-updater/src/types/IMeta';
-```
-
-ITag for metaTags and linkTags in meta.
-
-```ts
-import ITag from 'vue-meta-tag-updater/src/types/ITag';
 ```
