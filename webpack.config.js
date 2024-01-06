@@ -10,8 +10,9 @@ module.exports = (env, argv) => {
     context: path.resolve(__dirname, 'src'),
     entry: './index.ts',
     output: {
-      filename: 'index.js',
       path: path.resolve(__dirname, 'build'),
+      filename: 'index.js',
+      libraryTarget: 'commonjs',
     },
     optimization: {
       splitChunks: {

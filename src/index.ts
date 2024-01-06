@@ -63,4 +63,4 @@ const MetaTagUpdater = {
   update: updateMetaTag,
 };
 
-module.exports = MetaTagUpdater;
+export default MetaTagUpdater;
