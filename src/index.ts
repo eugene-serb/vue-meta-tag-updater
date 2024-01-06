@@ -8,7 +8,7 @@ const CONTROL_ATTRIBUTE = 'data-vue-router-controlled';
 
 /**
  * Вставить теги.
- * 
+ *
  * @param tagsArray Теги.
  * @param type Тип тегов.
  */
@@ -29,12 +29,12 @@ function appendTags(tagsArray: Array<ITag>, type: MetaTagType) {
 
 /**
  * Обновить мета информацию страницы.
- * 
+ *
  * @param to Куда переходим.
  * @param from Откуда переходим.
  * @param next Следующий middleware.
  * @param metas Мета информация страницы.
- * @returns 
+ * @returns
  */
 function updateMetaTag(
   to: RouteLocationNormalized,
