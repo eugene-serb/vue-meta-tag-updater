@@ -5,6 +5,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
+    "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
