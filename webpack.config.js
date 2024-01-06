@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
@@ -26,9 +27,7 @@ module.exports = (env, argv) => {
         '@': path.resolve(__dirname, 'src'),
       },
     },
-    plugins: [
-      new CleanWebpackPlugin(),
-    ],
+    plugins: [new ESLintWebpackPlugin(), new CleanWebpackPlugin()],
     module: {
       rules: [
         {
