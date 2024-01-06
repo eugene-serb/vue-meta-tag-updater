@@ -1,10 +1,10 @@
-import type { NavigationGuardNext, RouteLocationNormalized } from "vue-router";
-import type IRouteMeta from "@/types/IRouteMeta";
+import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
+import type IRouteMeta from '@/types/IRouteMeta';
 import type ITag from '@/types/ITag';
 
 function appendTags(tagsArray: Array<ITag>, type: string) {
-  tagsArray.map(
-    (meta: ITag) => {
+  tagsArray
+    .map((meta: ITag) => {
       const tag = document.createElement(type);
 
       Object.keys(meta).forEach((key) => {
@@ -13,22 +13,21 @@ function appendTags(tagsArray: Array<ITag>, type: string) {
       tag.setAttribute('data-vue-router-controlled', '');
 
       return tag;
-    }
-  ).forEach(tag => document.head.appendChild(tag));
+    })
+    .forEach((tag) => document.head.appendChild(tag));
 }
 
 function updateMetatag(
   to: RouteLocationNormalized,
   from: RouteLocationNormalized,
   next: NavigationGuardNext,
-  metas: Array<IRouteMeta>
+  metas: Array<IRouteMeta>,
 ) {
-  Array.from(document.querySelectorAll('[data-vue-router-controlled]'))
-    .map(el => {
-      if (el.parentNode) {
-        el.parentNode.removeChild(el);
-      }
-    });
+  Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map((el) => {
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
+  });
 
   let title: string = '' as string;
   let metaTags: Array<ITag> = [] as Array<ITag>;
