@@ -42,7 +42,7 @@ function updateMetaTag(
   next: NavigationGuardNext,
   metas: Array<IRouteMeta>,
 ) {
-  Array.from(document.querySelectorAll(CONTROL_ATTRIBUTE)).map((entity) => {
+  Array.from(document.querySelectorAll(`[${CONTROL_ATTRIBUTE}]`)).map((entity) => {
     if (entity.parentNode) {
       entity.parentNode.removeChild(entity);
     }
