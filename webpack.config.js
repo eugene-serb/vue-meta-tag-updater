@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 'use strict';
 
-const path = require('path');
+const path = require('node:path');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -10,7 +12,7 @@ module.exports = (env, argv) => {
     context: path.resolve(__dirname, 'src'),
     entry: './index.ts',
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
       libraryTarget: 'commonjs',
     },

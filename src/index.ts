@@ -80,7 +80,7 @@ function updateMetaTag(
 /**
  * Публичный объект.
  */
-const MetaTagUpdater = {
+export const MetaTagUpdater = {
   update: updateMetaTag,
 };
 

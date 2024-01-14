@@ -1,26 +1,26 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "rootDir": "./src",
-    "outDir": "./build",
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "declaration": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
+    "outDir": "./dist",
+    "target": "es2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "strict": true,
     "allowJs": true,
     "checkJs": true,
-    "strict": true,
     "sourceMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
     "removeComments": true,
-    "baseUrl": ".",
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/*.ts"],
   "exclude": ["node_modules"]
 }
