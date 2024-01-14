@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/eugene-serb/vue-meta-tag-updater/issues"
   },
-  "main": "./build/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "start": "node ./build/index.js",
     "build": "webpack --mode production",
