@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "./src",
-    "outDir": "./build",
+    "outDir": "./dist",
     "target": "es2022",
     "module": "Node16",
     "moduleResolution": "Node16",
