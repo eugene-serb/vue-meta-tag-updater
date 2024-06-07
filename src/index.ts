@@ -12,7 +12,7 @@ const CONTROL_ATTRIBUTE = 'data-vue-router-controlled';
  * @param tagsArray Теги.
  * @param type Тип тегов.
  */
-function appendTags(tagsArray: Array<ITag>, type: MetaTagType) {
+function appendTags(tagsArray: Array<ITag>, type: MetaTagType): void {
   tagsArray
     .map((meta) => {
       const tag = document.createElement(type);
@@ -41,7 +41,7 @@ function updateMetaTag(
   from: RouteLocationNormalized,
   next: NavigationGuardNext,
   metas: Array<IRouteMeta>,
-) {
+): void {
   Array.from(document.querySelectorAll(`[${CONTROL_ATTRIBUTE}]`)).map((entity) => {
     if (entity.parentNode) {
       entity.parentNode.removeChild(entity);
@@ -53,7 +53,7 @@ function updateMetaTag(
   let linkTags: Array<ITag> = [];
 
   metas.forEach((entity) => {
-    if (entity.path === to.fullPath) {
+    if (entity.path === to.path) {
       if (entity.meta) {
         title = entity.meta.title;
         metaTags = entity.meta.metaTags;
