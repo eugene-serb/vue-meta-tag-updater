@@ -1,6 +1,6 @@
 {
   "name": "vue-meta-tag-updater",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Vue Meta Tag Updater for update meta tags in Vue Router",
   "keywords": [
     "vue-router",
@@ -42,7 +42,7 @@
     "eslint-cli": "^1.1.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-webpack-plugin": "^4.1.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
