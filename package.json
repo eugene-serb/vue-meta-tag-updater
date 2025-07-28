@@ -26,6 +26,7 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "webpack --mode production",
+    "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "npx prettier --check .",
