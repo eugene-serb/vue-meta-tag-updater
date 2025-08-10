@@ -1,0 +1,14 @@
+.github
+.husky
+node_modules
+src
+.gitattributes
+.gitignore
+.npmignore
+.prettierignore
+.prettierrc.ts
+commitlint.config.ts
+eslint.config.ts
+index.html
+tsconfig.ts
+vite.config.ts

@@ -38,7 +38,7 @@ function appendTags(tagsArray: Array<ITag>, type: MetaTagType): void {
  */
 function updateMetaTag(
   to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
+  _from: RouteLocationNormalized,
   next: NavigationGuardNext,
   metas: Array<IRouteMeta>,
 ): void {
@@ -80,7 +80,7 @@ function updateMetaTag(
 /**
  * Публичный объект.
  */
-export const MetaTagUpdater = {
+const MetaTagUpdater = {
   update: updateMetaTag,
 };
 
