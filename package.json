@@ -1,6 +1,6 @@
 {
   "name": "vue-meta-tag-updater",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Vue Meta Tag Updater for update meta tags in Vue Router",
   "keywords": [
     "vue-router",
@@ -22,35 +22,58 @@
   "bugs": {
     "url": "https://github.com/eugene-serb/vue-meta-tag-updater/issues"
   },
-  "main": "./dist/index.js",
+  "funding": {
+    "type": "individual",
+    "url": "https://eugene-serb.github.io/"
+  },
+  "type": "module",
+  "main": "./dist/vue-meta-tag-updater.cjs.js",
+  "module": "./dist/vue-meta-tag-updater.es.js",
+  "types": "./dist/vue-meta-tag-updater.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/vue-meta-tag-updater.d.ts",
+      "import": "./dist/vue-meta-tag-updater.es.js",
+      "require": "./dist/vue-meta-tag-updater.cjs.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md",
+    "package.json",
+    "package-lock.json"
+  ],
   "scripts": {
-    "start": "node ./dist/index.js",
-    "build": "webpack --mode production",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "npx prettier --check .",
-    "format:fix": "npx prettier --write --ignore-unknown ."
+    "format:fix": "npx prettier --write --ignore-unknown .",
+    "prepare": "husky"
   },
   "dependencies": {
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@eslint/css": "^0.10.0",
-    "@eslint/js": "^9.26.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.33.0",
     "@eslint/json": "^0.13.1",
-    "@eslint/markdown": "^7.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "eslint": "^9.32.0",
-    "eslint-cli": "^1.1.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@types/node": "^24.2.1",
+    "eslint": "^9.33.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-webpack-plugin": "^5.0.2",
-    "prettier": "^3.6.2",
-    "ts-loader": "^9.5.2",
-    "typescript": "^5.8.3",
-    "webpack": "^5.101.0",
-    "webpack-cli": "^6.0.1"
+    "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "prettier": "3.6.2",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.0",
+    "vite": "^7.1.1",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
